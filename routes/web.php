@@ -17,6 +17,9 @@ Route::get('thread/{id}', 'ThreadController@show');
 // Post a thread
 Route::post('post-thread', 'ThreadController@post');
 Route::get('post-thread', 'HomeController@index');
+// Post a comment
+Route::post('post-comment', 'CommentController@post');
+Route::get('post-comment', 'HomeController@index');
 
 
 Auth::routes();

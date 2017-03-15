@@ -36,10 +36,10 @@
                 <div class="panel-body">
                     {!! Form::open(['url' => 'post-thread']) !!}
                     <div class="form-group">
-                        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title']) !!}
+                        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title', 'required' => 'required']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Message...']) !!}
+                        {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Message...', 'required' => 'required']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::submit('Submit', ['class' => 'btn btn-primary pull-right']) !!}

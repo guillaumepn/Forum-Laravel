@@ -14,6 +14,32 @@
                         {{ $thread->content }}
                     </div>
                 </div>
+                    @foreach($comments as $comment)
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><b>{{ $comment->user->name }}</b> <i>said :
+                                        <span class="pull-right">{{ $comment->updated_at->diffForHumans() }}</span></i></h3>
+                            </div>
+
+                            <div class="panel-body">
+                                {{ $comment->content }}
+                            </div>
+                        </div>
+                    @endforeach
+
+                <div class="panel panel-info">
+                    <div class="panel-body">
+                        {!! Form::open(['url' => 'post-comment']) !!}
+                        <div class="form-group">
+                            {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Message...', 'required' => 'required']) !!}
+                        </div>
+                            {!! Form::hidden('threadId', $thread->id) !!}
+                        <div class="form-group">
+                            {!! Form::submit('Submit', ['class' => 'btn btn-primary pull-right']) !!}
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
