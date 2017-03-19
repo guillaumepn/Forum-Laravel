@@ -21,6 +21,7 @@ class CommentController extends Controller
         Session::flash('alert-success', 'Comment was successfully created !');
 
         $thread = Thread::findOrFail($request->threadId);
+        $thread->save();
         $comments = Comment::where('thread', $request->threadId)->orderBy('updated_at', 'asc')->get();
         return view('thread', ['id' => $request->threadId, 'thread' => $thread, 'comments' => $comments]);
     }

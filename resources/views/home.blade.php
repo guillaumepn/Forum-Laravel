@@ -11,9 +11,9 @@
                     <thead class="thead-default">
                     <tr>
                         <th>Title</th>
-                        <th>Responses</th>
+                        <th class="text-center">Responses</th>
                         <th>Author</th>
-                        <th>Last modified</th>
+                        <th>Last message</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -22,7 +22,9 @@
                             <td>
                                 <a href="{{ url('thread', ['id' => $thread->id]) }}">{{ $thread->title }}</a>
                             </td>
-                            <td></td>
+                            <td class="text-center">
+                                {{ $commentsPerThread[$thread->id] }}
+                            </td>
                             <td>{{ $thread->user->name }}</td>
                             <td>{{ $thread->updated_at->diffForHumans() }}</td>
                         </tr>

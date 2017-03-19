@@ -7,7 +7,7 @@
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{ $thread->title }} <i>posted by <b>{{ $thread->user->name }}</b>
-                        <span class="pull-right">{{ $thread->updated_at->diffForHumans() }}</span></i></h3>
+                        <span class="pull-right">{{ $thread->created_at->diffForHumans() }}</span></i></h3>
                     </div>
 
                     <div class="panel-body">

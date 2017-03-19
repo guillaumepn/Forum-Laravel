@@ -17,6 +17,10 @@ class Comment extends Model
         'thread'
     ];
 
+    protected $touches = [
+        'topic'
+    ];
+
     public function user() {
         return $this->belongsTo(User::class, 'author');
     }
