@@ -13,7 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
-Route::get('thread/{id}', 'ThreadController@show');
+Route::get('thread/{id}', 'ThreadController@show')->name('thread');
+Route::get('messages', 'MessagesController@index')->name('messages');
 // Post a thread
 Route::post('post-thread', 'ThreadController@post');
 Route::get('post-thread', 'HomeController@index');

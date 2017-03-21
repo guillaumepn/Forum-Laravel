@@ -34,7 +34,6 @@ class HomeController extends Controller
          */
         $threads = Thread::orderBy('updated_at', 'desc')->paginate(15);
         $commentsPerThread = array();
-
         foreach ($threads as $thread) {
             $commentsPerThread[$thread->id] = Comment::where('thread', $thread->id)->count();
         }
